@@ -1,21 +1,35 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to Boust Bioinformatics!"
 date:   2016-01-03 15:02:43
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Bet I never keep this up-to-date!
 
-Jekyll also offers powerful support for code snippets:
+Starting a site to keep track of bioinformatics things I'm working on or interested in.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+Pretty easy to make fancy highlighted code too, e.g.:
+
+{% highlight python %}
+
+def silly_reverse_complement(dna_string):
+  
+  """ Always better to use biopython for this! """
+  
+  complement_dict = { 'A' : 'T', 
+                      'C' : 'G', 
+                      'G' : 'C', 
+                      'T' : 'A' }
+  bases = list(dna_string)
+
+  output = ''.join([complement_dict[base] for base in bases][::-1])
+
+  return output
+
+print silly_reverse_complement('TTTAAACCGG')
+
+#=> prints reverse complement of 'TTTAAACCGG' i.e. CCGGTTTAAA .
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
